@@ -2,16 +2,19 @@ var mongoose = require('mongoose');
 //Set up default mongoose connection
 const userscheme=new mongoose.Schema(
 {
-      cedula: {
+      nombre: {
          type: String
       },
-      nombre: {
+      email: {
           type: String
       },
-      clave: {
+      usuario: {
           type: String
-      }
+      },
+      contraseña: {
+        type: String
+    }
 }
 
 )
-module.exports= mongoose.model('juans', userscheme)
+module.exports= mongoose.model('user', userscheme)

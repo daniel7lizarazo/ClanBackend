@@ -8,7 +8,7 @@ var modeloUsario= require('./user')
      
  //app.post("/", (req, res) => {
 
-  var myobj = { nombre: "nombre", tipo: "alberto", ubicacion: "767776677" };
+  var myobj = { Nombre: "", Email : "", Documento: "", Contraseña };
   modeloUsario.collection.insertOne(myobj, function(err, res) {
   if (err) throw err;
   console.log("1 documento insertado");
