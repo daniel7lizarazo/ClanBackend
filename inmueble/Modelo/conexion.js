@@ -1,11 +1,11 @@
 var mongoose= require("mongoose")
 
-const monngodb_url="mongodb+srv://grupo_4:Ricardo89@grupo4.womut.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const monngodb_url="mongodb+srv://daniel_prog_web:programacionweb2021@clusterprogweb.tkzyl.mongodb.net/Inmobiliaria?retryWrites=true&w=majority";
 
 mongoose.connect(monngodb_url, {useNewUrlParser: true,useUnifiedTopology: true}).then(()=>{
-    console.log("mongodb esta conectado");
+    console.log("Conectado a base de datos");
 }).catch((error)=>{
-    console.log("mondb no esta conectado");
+    console.log("Fallo en conexión a base de datos");
     console.log(error);
 });
 
