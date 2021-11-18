@@ -9,7 +9,7 @@ ngApp.controller('myController', function($scope, $http) {
     }
     $scope.createTodo = function() {
         $http
-            .post("http://localhost:5000/insertuser", $scope.formData)
+            .post("http://localhost:3000/insertuser", $scope.formData)
             .then(function successCallback(response) {
                 // $scope.formData = {};
                 $scope.todos = response.data;

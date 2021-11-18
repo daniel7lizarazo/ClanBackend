@@ -1,5 +1,5 @@
 var mongoose = require("mongoose")
-const monngodb_url = "mongodb://mileniso:1234*@inmobiliaria-shard-00-00.aqxbp.mongodb.net:27017,inmobiliaria-shard-00-01.aqxbp.mongodb.net:27017,inmobiliaria-shard-00-02.aqxbp.mongodb.net:27017/Inmobiliaria?ssl=true&replicaSet=atlas-11rchw-shard-0&authSource=admin&retryWrites=true&w=majority";
+const monngodb_url = "mongodb+srv://daniel_prog_web:programacionweb2021@clusterprogweb.tkzyl.mongodb.net/ActividadesDB?retryWrites=true&w=majority";
 
 
 

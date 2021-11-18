@@ -27,7 +27,7 @@ app.post("/upload", (req, res) => {
     res.send({
       err: 0,
       url:
-        "http://localhost:5000/upload/" +
+        "http://localhost:3000/upload/" +
         req.files[0].filename + path.parse(req.files[0].originalname).ext // La ruta de vista previa de la imagen
     });
   });
@@ -42,9 +42,9 @@ app.get('/', (req, res) => {
   })
   
 
-app.listen(5000, () => {
+app.listen(3000, () => {
 
-console.log("aplicacion corriendo en el puerto 5000")
+console.log("aplicacion corriendo en el puerto 3000")
 
 })
 
