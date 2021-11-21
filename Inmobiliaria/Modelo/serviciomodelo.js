@@ -1,6 +1,8 @@
 const express = require("express");
 const { createReadStream } = require('fs')
-var modelo = require('./usuarios')
+var usuarios = require('./usuarios')
+var ubicaciones = require('./ubicaciones')
+var inmuebles = require('./inmuebles')
 
 //var qs=require("querystring")
 //var body_parser = require('body-parser');
@@ -17,18 +19,36 @@ app.use(express.json());
 app.use(express.static("public"));
 
 const path = require("path");
-var modeloUsario = require('./inmuebles')
 
 require('./conexion')
 
 app.post("/insertuser", (req, res) => {
     var myobj = { Nombre: req.body.nombre, Documento: req.body.documento, Email: req.body.email, Usuario: req.body.usuario, Clave: req.body.clave };
-    modelo.collection.insertOne(myobj, function(err, res) {
-        if (err) throw err;
-        res.send("datos creados")
+    usuarios.collection.insertOne(myobj, function(err, res) {
+        if (err) {throw err;}
+        console.log("datos creados")
     })
-    res.send("datos creados")
 })
+
+app.post("/insertubicacion", (req, res) => {
+    var myobj = { Departamento: req.body.Departamento, Ciudad: req.body.Ciudad, Zona: req.body.Zona};
+    ubicaciones.collection.insertOne(myobj, function(err, res) {
+        if (err) {throw err;}
+        console.log("datos creados")
+    })
+})
+
+//POST INMUEBLE
+app.post("/insertarInmueble", (req, res) => {
+    ubicaciones.find({ Zona:req.body.ubicacion }, (err, docs) => {
+        var inmueble1 = { nombre:req.body.nombre , numero_habitaciones: req.body.numero_habitaciones, precio: req.body.precio, tipo:req.body.tipo , imagen:req.body.imagen , ubicacion: docs[0]._id };
+        inmuebles.collection.insertOne(inmueble1, function (err, res) {
+            if (err) throw err;
+            console.log("1 dato Insertado en Inmueble");
+        })
+    })
+})
+
 
 app.get('/', (req, res) => {
     res.writeHead(200, { 'Content-Type': HTML_CONTENT_TYPE })

@@ -1,4 +1,4 @@
-var ngApp = angular.module('myApp', []);
+var ngApp = angular.module('UsuariosApp', []);
 
 ngApp.controller('myController', function($scope, $http) {
 
@@ -21,7 +21,7 @@ ngApp.controller('myController', function($scope, $http) {
 })
 
 
-onload = function() {
+/*onload = function() {
     document.getElementById('lbtnTest').onclick = function() {
         alert("Ingrese los datos")
             // Obtenga la aplicación Angular a través del controlador
@@ -36,4 +36,4 @@ onload = function() {
         // Llame al método getData () en el controlador
         console.log($scope.getData());
     }
-}
+}*/

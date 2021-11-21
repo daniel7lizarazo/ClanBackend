@@ -1,5 +1,5 @@
 var mongoose = require("mongoose")
-const monngodb_url = "mongodb+srv://daniel_prog_web:programacionweb2021@clusterprogweb.tkzyl.mongodb.net/ActividadesDB?retryWrites=true&w=majority";
+const monngodb_url = "mongodb+srv://daniel_prog_web:programacionweb2021@clusterprogweb.tkzyl.mongodb.net/Inmobiliaria?retryWrites=true&w=majority";
 
 
 
