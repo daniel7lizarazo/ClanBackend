@@ -97,14 +97,14 @@
 	z-index: 2;
 }
 .camera_target_content .camera_link {
-    background: url(assets/images/blank.gif);
+    background: url(../images/blank.gif);
 	display: block;
 	height: 100%;
 	text-decoration: none;
 }
 .camera_loader {
-    background: #fff url(assets/images/camera-loader.gif) no-repeat center;
-	background: rgba(255, 255, 255, 0.9) url(assets/images/camera-loader.gif) no-repeat center;
+    background: #fff url(../images/camera-loader.gif) no-repeat center;
+	background: rgba(255, 255, 255, 0.9) url(../images/camera-loader.gif) no-repeat center;
 	border: 1px solid #ffffff;
 	-webkit-border-radius: 18px;
 	-moz-border-radius: 18px;
@@ -393,7 +393,7 @@
 *	COLORS & SKINS
 *
 **************************/
-.pattern_1 .camera_overlayer {
+/*.pattern_1 .camera_overlayer {
 	background: url(../images/patterns/overlay1.png) repeat;
 }
 .pattern_2 .camera_overlayer {
@@ -422,7 +422,7 @@
 }
 .pattern_10 .camera_overlayer {
 	background: url(assets/images/patterns/overlay10.png) repeat;
-}
+}*/
 .camera_caption {
 	color: #fff;
 }
