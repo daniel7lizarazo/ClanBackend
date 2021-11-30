@@ -5,9 +5,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { RegistrarUsuairosComponent } from './registrar-usuairos/registrar-usuairos.component';
+import { RegistrarUsuariosService } from './registrar-usuairos/registrar-usuarios.service';
 import { InicioComponent } from './inicio/inicio.component';
 import { RegistrarUbicacionesComponent } from './registrar-ubicaciones/registrar-ubicaciones.component';
 import { RegistrarInmueblesComponent } from './registrar-inmuebles/registrar-inmuebles.component';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+
 
 const router: Routes=[
   {
@@ -49,12 +52,19 @@ const router: Routes=[
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(router)
+    RouterModule.forRoot(router),
+    HttpClientModule
+    
   ],
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [
+    RegistrarUsuariosService,
+    HttpClient
+    
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

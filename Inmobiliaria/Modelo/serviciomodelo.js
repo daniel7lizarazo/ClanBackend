@@ -1,8 +1,9 @@
 const express = require("express");
-const { createReadStream } = require('fs')
+//const { createReadStream } = require('fs')
 var usuarios = require('./usuarios')
 var ubicaciones = require('./ubicaciones')
 var inmuebles = require('./inmuebles')
+var cors = require('cors');
 
 //var qs=require("querystring")
 //var body_parser = require('body-parser');
@@ -17,6 +18,7 @@ const HTML_CONTENT_TYPE = 'text/html'
 
 app.use(express.json());
 app.use(express.static("public"));
+app.use(cors());
 
 const path = require("path");
 
@@ -50,13 +52,17 @@ app.post("/insertarInmueble", (req, res) => {
 })
 
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.writeHead(200, { 'Content-Type': HTML_CONTENT_TYPE })
 
     createReadStream('./index.html').pipe(res)
 
-})
+})*/
 
+app.get('/usuarios-prueba', (req,res)=>{
+    res.writeHead(200,{'Content-Type': HTML_CONTENT_TYPE})
+    console.log("Hola desde la api en puerto 3000")
+})
 
 app.listen(3000, () => {
 
