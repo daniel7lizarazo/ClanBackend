@@ -24,18 +24,18 @@
                                 <h1 class="titulo5">Registro Ubicación</h1>
                                 <div class="grupo">
                                     <label for="valor">Departamento:</label>
-                                    <input type="text" class="form-control input-lg text-center" id="Departamento"><br><br>
+                                    <input type="text" class="form-control input-lg text-center" id="departamento"><br><br>
                                 </div>
                                 <div class="grupo">
                                     <label for="valor">Ciudad:</label>
-                                    <input type="text" class="form-control input-lg text-center" id="Ciudad"><br><br>
+                                    <input type="text" class="form-control input-lg text-center" id="ciudad"><br><br>
                                 </div>
                                 <div class="grupo">
                                     <label for="Barrio">Zona:</label>
-                                    <input type="text" class="form-control input-lg text-center" id="Zona" ng-model="formData.Zona">
+                                    <input type="text" class="form-control input-lg text-center" id="zona">
                                     <br><br>
                                 </div>
-                                <button type="submit" ng-click="createTodo()">Registrar</button>
+                                <button type="submit" (click)="registrarUbicaciones()">Registrar</button>
                             </div>
                     </form>
                 </div>

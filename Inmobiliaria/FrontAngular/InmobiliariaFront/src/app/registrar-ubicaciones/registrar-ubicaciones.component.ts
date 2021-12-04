@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegistrarUbicacionesService } from './registrar-ubicaciones.service';
 
 @Component({
   selector: 'app-registrar-ubicaciones',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarUbicacionesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: RegistrarUbicacionesService) {}
 
   ngOnInit(): void {
   }
 
+  registrarUbicaciones()
+  {
+    let ubicacion = {
+      departamento : ((document.getElementById("departamento")) as HTMLInputElement).value,
+      ciudad : ((document.getElementById("ciudad")) as HTMLInputElement).value,
+      zona : ((document.getElementById("zona")) as HTMLInputElement).value
+    }
+    
+    this.service.registrarUbicaciones(ubicacion)
+  }
 }

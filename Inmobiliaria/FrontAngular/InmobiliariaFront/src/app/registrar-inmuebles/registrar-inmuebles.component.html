@@ -23,43 +23,51 @@
                     <form id="form">
                         <div class="form">
                             <h1>Crear Inmueble</h1>
+
                             <div class="grupo">
-                                <label for="">Nombre Inmueble</label>
+                                <label for="nombre">Nombre Inmueble</label>
                                 <br>
-                                <input type="text" class="form-control input-lg text-center" name="" id="name" required ng-model="formData.nombre"> <span
+                                <input type="text" class="form-control input-lg text-center" id="nombre"> <span
                                     class="barra"></span>
                             </div>
+
                             <div class="grupo">
-                                <label for="">Tipo Inmueble</label>
+                                <label for="tipo">Tipo Inmueble</label>
                                 <br>
-                                <input type="text"class="form-control input-lg text-center" name="" id="name" required ng-model="formData.tipo"> <span
+                                <input type="text"class="form-control input-lg text-center" id="tipo"> <span
                                     class="barra"></span>
                             </div>
+
                             <div class="grupo">
-                                <label for=""> Numero de habitaciones </label>
+                                <label for="numeroHabitaciones"> Numero de habitaciones </label>
                                 <br>
-                                <input type="text"class="form-control input-lg text-center" name="" id="name" required ng-model="formData.numero_habitaciones">
+                                <input type="number" class="form-control input-lg text-center" id="numeroHabitaciones">
                                 <span class="barra"></span>
                             </div>
+
                             <div class="grupo">
-                                <label for="">Imagen</label>
+                                <label for="imagen">Imagen</label>
                                 <br>
-                                <input type="text" class="form-control input-lg text-center"name="" id="name" required ng-model="formData.imagen"> <span
+                                <input type="text" class="form-control input-lg text-center" id="imagen"> <span
                                     class="barra"></span>
                             </div>
+
                             <div class="grupo">
-                                <label for="">Ubicación</label>
+                                <label for="ubicacion">Ubicación</label>
                                 <br>
-                                <input type="text" class="form-control input-lg text-center"name="" id="name" required ng-model="formData.ubicacion"> <span
+                                <input type="text" class="form-control input-lg text-center" id="ubicacion"> <span
                                     class="barra"></span>
                             </div>
+
                             <div class="grupo">
-                                <label for="">Precio</label>
+                                <label for="precio">Precio</label>
                                 <br>
-                                <input type="text" class="form-control input-lg text-center"name="" id="name" required ng-model="formData.precio"> <span
+                                <input type="number" class="form-control input-lg text-center" id="precio"> <span
                                     class="barra"></span>
                             </div>
-                            <button type="submit" ng-click="createTodo()">Crear</button>
+
+                            <button type="submit" (click)="registrarInmuebles()">Crear</button>
+                            
                         </div>
                     </form>
                 </div>

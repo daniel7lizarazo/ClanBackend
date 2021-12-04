@@ -8,7 +8,9 @@ import { RegistrarUsuairosComponent } from './registrar-usuairos/registrar-usuai
 import { RegistrarUsuariosService } from './registrar-usuairos/registrar-usuarios.service';
 import { InicioComponent } from './inicio/inicio.component';
 import { RegistrarUbicacionesComponent } from './registrar-ubicaciones/registrar-ubicaciones.component';
+import { RegistrarUbicacionesService } from './registrar-ubicaciones/registrar-ubicaciones.service';
 import { RegistrarInmueblesComponent } from './registrar-inmuebles/registrar-inmuebles.component';
+import { RegistrarInmueblesService } from './registrar-inmuebles/registrar-inmuebles.service';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 
 
@@ -49,6 +51,7 @@ const router: Routes=[
     RegistrarUbicacionesComponent,
     RegistrarInmueblesComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
@@ -56,15 +59,18 @@ const router: Routes=[
     HttpClientModule
     
   ],
+
   exports: [
     RouterModule
   ],
+
   providers: [
     RegistrarUsuariosService,
-    HttpClient
-    
-    
+    HttpClient,
+    RegistrarUbicacionesService,
+    RegistrarInmueblesService 
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
