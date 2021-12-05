@@ -1,47 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Regstro de ubicaciones</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Interior-Design-Responsive-Website-Templates-Edge" />
-    <meta name="author" content="webThemez.com" />
-    <link rel="favicon" href="../../assets/images/favicon.png">
-    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/bootstrap-theme.css" media="screen">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel='stylesheet' id='camera-css' href="../../assets/css/camera.css" type='text/css' media='all'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./registrar-ubicaciones.component.css">
+    <title>Ubicaciones</title>
 </head>
 
 <body>
-     <div class="head-box" style="margin-top:-20px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8">
-                    <form id="form">
-                            <div class="form">
-                                <h1 class="titulo5">Registro Ubicación</h1>
-                                <div class="grupo">
-                                    <label for="valor">Departamento:</label>
-                                    <input type="text" class="form-control input-lg text-center" id="departamento"><br><br>
-                                </div>
-                                <div class="grupo">
-                                    <label for="valor">Ciudad:</label>
-                                    <input type="text" class="form-control input-lg text-center" id="ciudad"><br><br>
-                                </div>
-                                <div class="grupo">
-                                    <label for="Barrio">Zona:</label>
-                                    <input type="text" class="form-control input-lg text-center" id="zona">
-                                    <br><br>
-                                </div>
-                                <button type="submit" (click)="registrarUbicaciones()">Registrar</button>
-                            </div>
-                    </form>
-                </div>
+
+    <form action="" id="form">
+        <div class="form">
+            <h1>Registro Ubicación</h1>
+
+            <div class="grupo">
+                <input type="text" id="departamento"> <span class="barra"></span>
+                <label for="departamento">Departamento:</label>
             </div>
+
+            <div class="grupo">
+                <input type="text" id="ciudad"> <span class="barra"></span>
+                <label for="ciudad">Ciudad:</label>
+            </div>
+
+            <div class="grupo">
+                <input type="text" id="zona"> <span class="barra"></span>
+                <label for="zona">Zona:</label>
+            </div>
+
+            <button type="submit" (click)="registrarUbicaciones()">Agregar</button>
+
         </div>
-     </div>
-
-
+    </form>
+    <!-- <li *ngFor="let ubica of ubicaciones">
+        {{ubicaciones.departamento}
+    </li> -->
 </body>

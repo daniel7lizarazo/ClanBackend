@@ -13,4 +13,7 @@ export class RegistrarUbicacionesService {
     this.http.post("http://localhost:3000/insertubicacion", ubicacion).subscribe(data=> 
     console.log(data))
   }
+
 }
+
+
