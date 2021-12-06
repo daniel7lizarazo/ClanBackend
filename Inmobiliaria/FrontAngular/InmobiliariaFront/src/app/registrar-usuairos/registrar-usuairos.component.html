@@ -1,53 +1,52 @@
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Regstro de usuarios</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Interior-Design-Responsive-Website-Templates-Edge" />
-    <meta name="author" content="webThemez.com" />
-    <link rel="favicon" href="../../assets/images/favicon.png">
-    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/bootstrap-theme.css" media="screen">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel='stylesheet' id='camera-css' href="../../assets/css/camera.css" type='text/css' media='all'>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./registrar-usuairos.component.css">
+    <title>Registro usuario</title>
 </head>
 
 <body>
 
-    <div class="head-box" style="margin-top:-20px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8">
-                    <form id="form">
-                        <div class="form-group">
+    <form action="" id="form">
+        <div class="form">
+            <h1>Registro</h1>
 
-                            <h1 class="titulo5">REGISTRO</h1>
-
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" class="form-control input-lg text-center" id="nombre"><br><br>
-
-                            <label for="documento">Documento:</label>
-                            <input type="text" class="form-control input-lg text-center" id="documento"><br><br>
-
-                            <label for="email">E-mail:</label>
-                            <input type="text" class="form-control input-lg text-center" id="email"><br><br>
-
-                            <label for="usuario">Usuario:</label>
-                            <input type="text" class="form-control input-lg text-center" id="usuario"><br><br>
-                            
-                            <label for="clave">Clave:</label>
-                            <input type="text" class="form-control input-lg text-center" id="clave"><br><br>
-
-                        </div>
-                        <button class="btn btn-primary btn-lg" (click)="registrarUsuarios()">Agregar</button>
-                    </form>
-                </div>
+            <div class="grupo">
+                <input type="text" name="" id="nombre"> <span class="barra"></span>
+                <label for="nombre">Nombres:</label>
             </div>
+
+
+            <div class="grupo">
+                <input type="text" name="" id="documento"> <span class="barra"></span>
+                <label for="documento">Documento:</label>
+            </div>
+
+
+            <div class="grupo">
+                <input type="text" name="" id="email"> <span class="barra"></span>
+                <label for="email">E-mail:</label>
+            </div>
+
+            <div class="grupo">
+                <input type="text" name="" id="usuario"> <span class="barra"></span>
+                <label for="usuario">Usuario:</label>
+            </div>
+
+            <div class="grupo">
+                <input type="password" name="" id="clave"> <span class="barra"></span>
+                <label for="clave">Contraseña</label>
+            </div>
+
+            <button type="submit" (click)="registrarUsuarios()">Agregar</button>
+
         </div>
-    </div>
+    </form>
+
     <li *ngFor="let usuario of usuarios">
         {{usuario.nombre}}
     </li>

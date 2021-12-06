@@ -27,7 +27,7 @@ require('./conexion')
 app.post("/insertuser", (req, res) => {
     var myobj = { nombre: req.body.nombre, documento: req.body.documento, email: req.body.email, usuario: req.body.usuario, clave: req.body.clave };
     usuarios.collection.insertOne(myobj, function(err, res) {
-        if (err) {throw err;}
+        if (err) { throw err; }
         console.log("datos creados")
     })
 })
@@ -40,18 +40,32 @@ app.get("/findusuarios", (req, res) => {
 })
 
 app.post("/insertubicacion", (req, res) => {
+<<<<<<< HEAD
     var myobj = { Departamento: req.body.departamento, Ciudad: req.body.ciudad, Zona: req.body.zona};
     ubicaciones.collection.insertOne(myobj, function(err, res) {
         if (err) {throw err;}
         console.log(myobj)
+=======
+    var myobj = { Departamento: req.body.departamento, Ciudad: req.body.ciudad, Zona: req.body.zona };
+    ubicaciones.collection.insertOne(myobj, function(err, res) {
+        if (err) { throw err; }
+        console.log("datos creados")
+>>>>>>> df8397a08f5e9dd539663527170e7ee2c4744ea2
     })
 })
 
 //POST INMUEBLE
+<<<<<<< HEAD
 app.post("/insertInmueble", (req, res) => {
     ubicaciones.find({ Zona:req.body.ubicacion }, (err, docs) => {
         var inmueble = { nombre:req.body.nombre , numeroHabitaciones: parseInt(req.body.numeroHabitaciones), precio: parseInt(req.body.precio), tipo:req.body.tipo , imagen:req.body.imagen , ubicacion: docs[0]._id };
         inmuebles.collection.insertOne(inmueble, function (err, res) {
+=======
+app.post("/insertinmueble", (req, res) => {
+    ubicaciones.find({ Zona: req.body.ubicacion }, (err, docs) => {
+        var inmueble1 = { nombre: req.body.nombre, numero_habitaciones: parseInt(req.body.numero_habitaciones), precio: parseInt(req.body.precio), tipo: req.body.tipo, imagen: req.body.imagen, ubicacion: docs[0]._id };
+        inmuebles.collection.insertOne(inmueble1, function(err, res) {
+>>>>>>> df8397a08f5e9dd539663527170e7ee2c4744ea2
             if (err) throw err;
             console.log(inmueble);
         })
@@ -66,8 +80,14 @@ app.post("/insertInmueble", (req, res) => {
 
 })*/
 
+<<<<<<< HEAD
 app.get('/usuarios-prueba', (req,res)=>{
     console.log("Hola usuarios desde la api en puerto 3000")
+=======
+app.get('/usuarios-prueba', (req, res) => {
+    res.writeHead(200, { 'Content-Type': HTML_CONTENT_TYPE })
+    console.log("Hola desde la api en puerto 3000")
+>>>>>>> df8397a08f5e9dd539663527170e7ee2c4744ea2
 })
 
 /*app.post('/registrar-usuarios-prueba', (req,res)=>{

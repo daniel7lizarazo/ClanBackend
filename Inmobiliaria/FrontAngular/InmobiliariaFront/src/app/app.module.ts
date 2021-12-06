@@ -12,6 +12,7 @@ import { RegistrarUbicacionesService } from './registrar-ubicaciones/registrar-u
 import { RegistrarInmueblesComponent } from './registrar-inmuebles/registrar-inmuebles.component';
 import { RegistrarInmueblesService } from './registrar-inmuebles/registrar-inmuebles.service';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { ConsultaInmueblesComponent } from './consulta-inmuebles/consulta-inmuebles.component';
 
 
 const router: Routes=[
@@ -49,7 +50,8 @@ const router: Routes=[
     RegistrarUsuairosComponent,
     InicioComponent,
     RegistrarUbicacionesComponent,
-    RegistrarInmueblesComponent
+    RegistrarInmueblesComponent,
+    ConsultaInmueblesComponent
   ],
 
   imports: [
