@@ -7,7 +7,7 @@ const inmueblescheme = new mongoose.Schema(
         nombre:{
             type: String
         },
-        numero_habitaciones:{
+        numeroHabitaciones:{
             type: Number
         },
         precio:{
