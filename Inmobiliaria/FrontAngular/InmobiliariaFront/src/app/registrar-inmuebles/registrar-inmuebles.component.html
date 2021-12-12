@@ -18,6 +18,7 @@
         <div class="form">
             <h1>Registro Inmueble</h1>
 
+            <img src="http://localhost:3000/upload/Inmobiliaria_IMG-20170112-WA0047.jpg">
 
             <div class="grupo">
                 <input type="text" name="" id="nombre"> <span class="barra"></span>
@@ -42,7 +43,7 @@
 
 
             <div class="grupo">
-                <input type="imagen" name="" id="imagen"> <span class="barra"></span>
+                <input type="file" name="" id="imagen" (change)="loadImages($event)"> <span class="barra"></span>
                 <label for="imagen">Imagen:</label>
             </div>
 

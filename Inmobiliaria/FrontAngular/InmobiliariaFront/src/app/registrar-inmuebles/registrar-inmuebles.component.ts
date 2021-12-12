@@ -11,7 +11,16 @@ export class RegistrarInmueblesComponent implements OnInit {
 
   constructor(private service: RegistrarInmueblesService) { }
 
+  image:any;
+
   ngOnInit(): void {
+  }
+
+  loadImages(event: any)
+  {
+    this.image = event.target.files[0];
+    console.log(this.image)
+
   }
 
   registrarInmuebles()
@@ -24,6 +33,8 @@ export class RegistrarInmueblesComponent implements OnInit {
       ubicacion: ((document.getElementById("ubicacion"))as HTMLInputElement).value,
       precio: ((document.getElementById("precio"))as HTMLInputElement).value
     }
+    
+    console.log(this.image)
 
     this.service.registrarInmuebles(inmueble)
   }

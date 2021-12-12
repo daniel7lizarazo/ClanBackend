@@ -15,4 +15,9 @@ export class RegistrarInmueblesService  {
     this.http.post("http://localhost:3000/insertinmueble", inmueble).subscribe(data=>
     console.log(data))
   }
+
+  /*oploadfile(image:Data)
+  {
+    this.http.post("http://localhost:3000/uploadFiles"), image
+  }*/
 }
