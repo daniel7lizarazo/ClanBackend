@@ -3,7 +3,7 @@ const multer = require("multer")
 
 const storage = multer.diskStorage({
     destination: function(req,file,cb){
-        cb(null,  "public/upload");
+        cb(null,  "public");
     },
     filename: function(req,file,cb){
         cb(null,`Inmobiliaria_${file.originalname}`);
@@ -53,14 +53,14 @@ app.post("/uploadFiles", upload.array('files'), (req, res)=>{
 })
 
 
-app.post("/uploadFile", upload.single('file'), (req, res)=>{
-    const file = req.file
+app.post("/uploadFile", upload.single('image'), (req, res)=>{
+    const file = req.image
 
     if(!file)
     {
         const error = new Error('No file added')
         error.httpStatusCode = 400
-        return next(error)
+        return error
     }
     res.send(file)
 
@@ -70,11 +70,13 @@ app.post("/insertuser", (req, res) => {
     var myobj = { nombre: req.body.nombre, documento: req.body.documento, email: req.body.email, usuario: req.body.usuario, clave: req.body.clave };
     usuarios.collection.insertOne(myobj, function(err, res) {
         if (err) { throw err; }
-        console.log("datos creados")
+        console.log(myobj)
     })
+    res.send(myobj)
 })
 
 app.get("/findusuarios", (req, res) => {
+    console.log("Conectado para encontrar usuarios")
     usuarios.find({}, (err, usuarios) => {
         if (err) {throw err;}
         res.send(JSON.stringify(usuarios))
@@ -87,6 +89,7 @@ app.post("/insertubicacion", (req, res) => {
         if (err) {throw err;}
         console.log(myobj)
     })
+        res.send(myobj)
 })
 
 //POST INMUEBLE
@@ -97,6 +100,22 @@ app.post("/insertInmueble", (req, res) => {
             if (err) throw err;
             console.log(inmueble);
         })
+    res.send(inmueble)
+    })
+})
+
+app.get("/consultarInmuebles", (req,res)=>{
+    console.log("Conectado para buscar inmuebles")
+    let todosInmuebles;
+inmuebles.find({}, function(err, inmuebles){
+            ubicaciones.populate(inmuebles, {path: "ubicacion"}, function(err, inmueble){
+                if (err) throw err;
+                res.end(JSON.stringify(inmueble))
+                //todosInmuebles = inmueble
+        })
+        //res.send(inmuebles)
+        //res.send(JSON.stringify(todosInmuebles))
+
     })
 })
 
@@ -127,13 +146,6 @@ app.get('/usuarios-prueba', (req,res)=>{
 
     res.send(user)
 
-})*/
-
-/*inmuebles.find({}, function(err, inmuebles){
-    ubicaciones.populate(inmuebles, {path: "ubicacion"}, function(err, inmueble){
-        if (err) throw err;
-        console.log(inmueble[0].ubicacion.Zona);
-    })
 })*/
 
 app.listen(3000, () => {
