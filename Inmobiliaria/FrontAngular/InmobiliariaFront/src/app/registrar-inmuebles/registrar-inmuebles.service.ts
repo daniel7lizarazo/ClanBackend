@@ -8,16 +8,23 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class RegistrarInmueblesService  {
 
+  image:any
   constructor(private http: HttpClient) { }
 
   registrarInmuebles(inmueble:Data)
   {
-    this.http.post("http://localhost:3000/insertinmueble", inmueble).subscribe(data=>
-    console.log(data))
+    return this.http.post("http://localhost:3000/insertinmueble", inmueble)
   }
 
-  /*oploadfile(image:Data)
+  uploadImage(image:any)
   {
-    this.http.post("http://localhost:3000/uploadFiles"), image
-  }*/
+    const formData = new FormData()
+    formData.append('image',image)
+
+    return this.http.post("http://localhost:3000/uploadFile", formData)
+    /*this.http.post("http://localhost:3000/uploadFile", formData).subscribe(data=>{
+      this.image = data
+    })
+    return this.image*/
+  }
 }

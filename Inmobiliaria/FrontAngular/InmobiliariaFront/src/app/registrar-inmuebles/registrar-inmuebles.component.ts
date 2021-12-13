@@ -19,24 +19,37 @@ export class RegistrarInmueblesComponent implements OnInit {
   loadImages(event: any)
   {
     this.image = event.target.files[0];
-    console.log(this.image)
 
   }
 
   registrarInmuebles()
   {
+    this.service.uploadImage(this.image).subscribe(data=>{
+      this.image = data
+    })
+    console.log(this.image)
     let inmueble={
       nombre: ((document.getElementById("nombre"))as HTMLInputElement).value,
       tipo: ((document.getElementById("tipo"))as HTMLInputElement).value,
-      numero_habitaciones: ((document.getElementById("numeroHabitaciones"))as HTMLInputElement).value,
-      imagen: ((document.getElementById("imagen"))as HTMLInputElement).value,
+      numeroHabitaciones: ((document.getElementById("numeroHabitaciones"))as HTMLInputElement).value,
+      imagen: "http://localhost:3000/Inmobiliaria_"+this.image.name,
       ubicacion: ((document.getElementById("ubicacion"))as HTMLInputElement).value,
       precio: ((document.getElementById("precio"))as HTMLInputElement).value
     }
-    
-    console.log(this.image)
 
-    this.service.registrarInmuebles(inmueble)
+    this.service.registrarInmuebles(inmueble).subscribe(data=>{
+      if(data != null || data != undefined)
+      {
+        ((document.getElementById("nombre"))as HTMLInputElement).value="",
+        ((document.getElementById("tipo"))as HTMLInputElement).value="",
+        ((document.getElementById("numeroHabitaciones"))as HTMLInputElement).value="",
+        ((document.getElementById("imagen"))as HTMLInputElement).value="",
+        ((document.getElementById("ubicacion"))as HTMLInputElement).value="",
+        ((document.getElementById("precio"))as HTMLInputElement).value=""
+        
+        alert("Inmueble agregado satisfactoriamente")
+      }
+    })
   }
 
 }

@@ -12,8 +12,7 @@ export class RegistrarUsuariosService {
 
   registrarUsuarios(user:Data)
   {
-    this.http.post("http://localhost:3000/insertuser",user).subscribe(data=>
-    console.log(data))
+    return this.http.post("http://localhost:3000/insertuser",user)
     
   }
 

@@ -9,9 +9,9 @@ import { RegistrarUsuariosService } from './registrar-usuarios.service';
 })
 export class RegistrarUsuairosComponent implements OnInit {
 
-  usuarios:any
-  
   constructor(private service: RegistrarUsuariosService) { }
+
+  usuarios:any
 
   ngOnInit(): void {
     //this.usuarios = this.service.getUsuarios()
@@ -29,7 +29,18 @@ export class RegistrarUsuairosComponent implements OnInit {
       clave:((document.getElementById("clave")) as HTMLInputElement).value 
     }
  
-    this.service.registrarUsuarios(user)
+    this.service.registrarUsuarios(user).subscribe(data=>{
+      if(data != null || data != undefined)
+      {
+        ((document.getElementById("nombre")) as HTMLInputElement).value="",
+        ((document.getElementById("documento")) as HTMLInputElement).value="",
+        ((document.getElementById("email")) as HTMLInputElement).value="",
+        ((document.getElementById("usuario")) as HTMLInputElement).value="",
+        ((document.getElementById("clave")) as HTMLInputElement).value="",
+
+        alert("Usuario agregado satisfactoriamente")
+      }
+    })
 
   }
 

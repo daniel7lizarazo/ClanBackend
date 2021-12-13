@@ -13,6 +13,7 @@ import { RegistrarInmueblesComponent } from './registrar-inmuebles/registrar-inm
 import { RegistrarInmueblesService } from './registrar-inmuebles/registrar-inmuebles.service';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { ConsultaInmueblesComponent } from './consulta-inmuebles/consulta-inmuebles.component';
+import { ConsultaInmueblesService } from './consulta-inmuebles/consulta-inmuebles.service';
 
 
 const router: Routes=[
@@ -40,8 +41,12 @@ const router: Routes=[
   {
     path : 'app-registrar-inmuebles',
     component : RegistrarInmueblesComponent 
+  },
+  {
+    path : 'app-consultar-inmuebles',
+    component : ConsultaInmueblesComponent 
   }
-  
+ 
 ]
 
 @NgModule({
@@ -70,7 +75,8 @@ const router: Routes=[
     RegistrarUsuariosService,
     HttpClient,
     RegistrarUbicacionesService,
-    RegistrarInmueblesService 
+    RegistrarInmueblesService, 
+    ConsultaInmueblesService 
   ],
   
   bootstrap: [AppComponent]

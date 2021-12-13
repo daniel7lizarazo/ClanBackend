@@ -18,7 +18,20 @@
         <div class="form">
             <h1>Registro Inmueble</h1>
 
-            <img src="http://localhost:3000/upload/Inmobiliaria_IMG-20170112-WA0047.jpg">
+            <!--<img src="http://localhost:3000/Inmobiliaria_IMG-20170112-WA0057.jpg">-->
+
+            <div class="grupo">
+                <br><br>
+                <select name="" id="tipo"> 
+                    <option selected></option>
+                    <option value="casa">Casa</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="lote">Lote</option>
+                    <option value="habitacion">Habitación</option>
+                </select>
+                <label for="tipo">Tipo Inmueble:</label>
+                <span class="barra"></span>
+            </div>
 
             <div class="grupo">
                 <input type="text" name="" id="nombre"> <span class="barra"></span>
@@ -28,17 +41,12 @@
 
             <div class="grupo">
                 <input type="number" name="" id="numeroHabitaciones"> <span class="barra"></span>
-                <label for="numeroHabitaciones"># habitaciones:</label>
-            </div>
-
-            <div class="grupo">
-                <input type="text" name="" id="tipo"> <span class="barra"></span>
-                <label for="tipo">Tipo Inmueble:</label>
+                <label for="numeroHabitaciones">Número de habitaciones:</label>
             </div>
 
             <div class="grupo">
                 <input type="number" name="" id="precio"> <span class="barra"></span>
-                <label for="precio">Precio:</label>
+                <label for="precio">Precio ($):</label>
             </div>
 
 

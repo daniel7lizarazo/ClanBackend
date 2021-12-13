@@ -24,7 +24,16 @@ export class RegistrarUbicacionesComponent implements OnInit {
       zona: ((document.getElementById("zona")) as HTMLInputElement).value
     }
     
-    this.service.registrarUbicaciones(ubica)
+    this.service.registrarUbicaciones(ubica).subscribe(data=>{
+    if(data != null || data != undefined)
+    {
+      ((document.getElementById("departamento")) as HTMLInputElement).value="",
+      ((document.getElementById("ciudad")) as HTMLInputElement).value="",
+      ((document.getElementById("zona")) as HTMLInputElement).value="",
+
+      alert("Ubicación agregada satisfactoriamente")
+    }
+    })
   }
 
   

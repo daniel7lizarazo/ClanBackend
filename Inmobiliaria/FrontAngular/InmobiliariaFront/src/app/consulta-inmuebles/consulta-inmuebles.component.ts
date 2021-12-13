@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsultaInmueblesService } from './consulta-inmuebles.service';
 
 @Component({
   selector: 'app-consulta-inmuebles',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaInmueblesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ConsultaInmueblesService) { }
+
+  inmueblesSinFiltro:any
 
   ngOnInit(): void {
+    this.service.consultatImuebles().subscribe(data=>{
+      this.inmueblesSinFiltro = data
+      console.log(this.inmueblesSinFiltro)
+
+    })
   }
 
 }

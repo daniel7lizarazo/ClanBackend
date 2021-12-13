@@ -10,8 +10,7 @@ export class RegistrarUbicacionesService {
   constructor(private http: HttpClient) { }
 
   registrarUbicaciones(ubicacion:Data) {
-    this.http.post("http://localhost:3000/insertubicacion", ubicacion).subscribe(data=> 
-    console.log(data))
+    return this.http.post("http://localhost:3000/insertubicacion", ubicacion)
   }
 
 }
